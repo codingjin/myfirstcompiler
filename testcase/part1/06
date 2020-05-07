@@ -1,0 +1,8 @@
+def main
+	int n;
+	int m;
+	m = true;
+	n = (10 * (10+1)) /2;
+	print(n);
+	print(m);
+end

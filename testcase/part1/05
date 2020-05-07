@@ -1,0 +1,5 @@
+def main
+	bool n;
+	n = true;
+	print(n);
+end

@@ -1,0 +1,23 @@
+def main
+	int n;
+	int m;
+	int a;
+	n = 10;
+	m = 2;
+	print(n);
+	if (n == m) do print(n);
+	else
+		while (n > m) do
+			n = n-1;
+			print(n);
+			if (m == 1) do print(m);
+			else
+				a = 3;
+				while (a > 0) do
+					print(a);
+					a = a -1;
+				end;
+			end;
+		end;
+	end;
+end

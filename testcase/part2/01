@@ -1,0 +1,12 @@
+def main
+	int n;
+	int m;
+	n = (10 * (10+1)) /2;
+	m = 1;
+	print(n);
+	if (n == m) do print(n);
+	else
+		m = 2;
+		print(m);
+	end;
+end

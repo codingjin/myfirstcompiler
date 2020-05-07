@@ -1,0 +1,24 @@
+def main
+	int n;
+	int m;
+	int i;
+	int i1;
+	int i2;
+	i1 = 100;
+	i2 = 200;
+	n = 10;
+	m = 2;
+	print(n);
+	if (n == m) do print(n);
+	else
+		while (n > m) do
+			n = n-1;
+			print(n);
+			for (i=0; i!=5;i=i+1) do
+				print(i1);
+				print(i);
+				print(i2);
+			end;
+		end;
+	end;
+end

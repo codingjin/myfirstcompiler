@@ -1,0 +1,17 @@
+def main
+	int i;
+	int j;
+	int k;
+
+	for (i=103;i!=100;i=i-1) do
+		print(i);
+		j=9;
+		while (j>7) do
+			print(j);
+			j=j-1;
+			for (k=1006;k!=1003;k=k-1) do
+				print(k);
+			end;
+		end;
+	end;
+end

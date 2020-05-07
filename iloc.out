@@ -1,0 +1,128 @@
+//goes to main entry
+	 br 	 L8 
+//sumUpTo function entry
+L0:	 nop 
+//assignment: sum=CONST valuetype[2] 0;for (i=CONST valuetype[2] 1 ; ID i <= ID n ; i=ID i + CONST valuetype[2] 1 ) DO sum=ID sum + ID i END;return ID sum
+	 loadI 	 0 	 => r1 
+	 storeAI 	 r1 	 => r0, 4 
+//forstmt: for (i=CONST valuetype[2] 1 ; ID i <= ID n ; i=ID i + CONST valuetype[2] 1 ) DO sum=ID sum + ID i END;return ID sum
+//assignment: i=CONST valuetype[2] 1
+	 loadI 	 1 	 => r2 
+	 storeAI 	 r2 	 => r0, 8 
+L9:	 nop 
+	 loadAI 	 r0, 8 	 => r4 
+	 loadAI 	 r0, 0 	 => r5 
+	 cmp_LE		 r4, r5 	 => r3 
+	 cbr 	 r3 	 => L10, L11 
+L10:	 nop 
+//assignment: sum=ID sum + ID i
+	 loadAI 	 r0, 4 	 => r7 
+	 loadAI 	 r0, 8 	 => r8 
+	 add 	 r7, r8 	 => r6 
+	 storeAI 	 r6 	 => r0, 4 
+//assignment: i=ID i + CONST valuetype[2] 1
+	 loadAI 	 r0, 8 	 => r10 
+	 loadI 	 1 	 => r11 
+	 add 	 r10, r11 	 => r9 
+	 storeAI 	 r9 	 => r0, 8 
+	 br 	 L9 
+L11:	 nop 
+//returnstmt: return ID sum
+	 loadAI 	 r0, 4 	 => r12 
+	 i2i 	 r12 => r255 
+	 br 	 L4 
+//A function entry
+L1:	 nop 
+//assignment: s=ID n;i=ID s + CONST valuetype[2] 1;return ID s + ID i
+	 loadAI 	 r0, 12 	 => r13 
+	 storeAI 	 r13 	 => r0, 16 
+//assignment: i=ID s + CONST valuetype[2] 1;return ID s + ID i
+	 loadAI 	 r0, 16 	 => r15 
+	 loadI 	 1 	 => r16 
+	 add 	 r15, r16 	 => r14 
+	 storeAI 	 r14 	 => r0, 20 
+//returnstmt: return ID s + ID i
+	 loadAI 	 r0, 16 	 => r18 
+	 loadAI 	 r0, 20 	 => r19 
+	 add 	 r18, r19 	 => r17 
+	 i2i 	 r17 => r255 
+	 br 	 L7 
+//C function entry
+L3:	 nop 
+//assignment: i=B();i=ID i + ID n;return ID i
+	 loadI 	 20 	 => r21 
+	 storeAI 	 r21 	 => r0, 32 
+	 br 	 L5 
+L2:	 nop 
+	 i2i 	 r255 => r20 
+	 storeAI 	 r20 	 => r0, 28 
+//assignment: i=ID i + ID n;return ID i
+	 loadAI 	 r0, 28 	 => r23 
+	 loadAI 	 r0, 24 	 => r24 
+	 add 	 r23, r24 	 => r22 
+	 storeAI 	 r22 	 => r0, 28 
+//returnstmt: return ID i
+	 loadAI 	 r0, 28 	 => r25 
+	 i2i 	 r25 => r255 
+	 br 	 L6 
+//B function entry
+L5:	 nop 
+//assignment: m=sumUpTo();for (i=CONST valuetype[2] 0 ; ID i <= CONST valuetype[2] 2 ; i=ID i + CONST valuetype[2] 1 ) DO m=ID m + ID i END;return ID m
+	 loadAI 	 r0, 32 	 => r27 
+	 storeAI 	 r27 	 => r0, 0 
+	 br 	 L0 
+L4:	 nop 
+	 i2i 	 r255 => r26 
+	 storeAI 	 r26 	 => r0, 36 
+//forstmt: for (i=CONST valuetype[2] 0 ; ID i <= CONST valuetype[2] 2 ; i=ID i + CONST valuetype[2] 1 ) DO m=ID m + ID i END;return ID m
+//assignment: i=CONST valuetype[2] 0
+	 loadI 	 0 	 => r28 
+	 storeAI 	 r28 	 => r0, 40 
+L12:	 nop 
+	 loadAI 	 r0, 40 	 => r30 
+	 loadI 	 2 	 => r31 
+	 cmp_LE		 r30, r31 	 => r29 
+	 cbr 	 r29 	 => L13, L14 
+L13:	 nop 
+//assignment: m=ID m + ID i
+	 loadAI 	 r0, 36 	 => r33 
+	 loadAI 	 r0, 40 	 => r34 
+	 add 	 r33, r34 	 => r32 
+	 storeAI 	 r32 	 => r0, 36 
+//assignment: i=ID i + CONST valuetype[2] 1
+	 loadAI 	 r0, 40 	 => r36 
+	 loadI 	 1 	 => r37 
+	 add 	 r36, r37 	 => r35 
+	 storeAI 	 r35 	 => r0, 40 
+	 br 	 L12 
+L14:	 nop 
+//returnstmt: return ID m
+	 loadAI 	 r0, 36 	 => r38 
+	 i2i 	 r38 => r255 
+	 br 	 L2 
+//main function entry
+L8:	 nop 
+//assignment: n=CONST valuetype[2] 100;m=CONST valuetype[2] 3;sum=C();m=A();print(m);print(sum)
+	 loadI 	 100 	 => r39 
+	 storeAI 	 r39 	 => r0, 44 
+//assignment: m=CONST valuetype[2] 3;sum=C();m=A();print(m);print(sum)
+	 loadI 	 3 	 => r40 
+	 storeAI 	 r40 	 => r0, 52 
+//assignment: sum=C();m=A();print(m);print(sum)
+	 loadAI 	 r0, 44 	 => r42 
+	 storeAI 	 r42 	 => r0, 24 
+	 br 	 L3 
+L6:	 nop 
+	 i2i 	 r255 => r41 
+	 storeAI 	 r41 	 => r0, 48 
+//assignment: m=A();print(m);print(sum)
+	 loadAI 	 r0, 52 	 => r44 
+	 storeAI 	 r44 	 => r0, 12 
+	 br 	 L1 
+L7:	 nop 
+	 i2i 	 r255 => r43 
+	 storeAI 	 r43 	 => r0, 52 
+//print: print(m);print(sum)
+	 outputAI 	 r0, 52 
+//print: print(sum)
+	 outputAI 	 r0, 48 

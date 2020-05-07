@@ -1,0 +1,17 @@
+def sumUpTo(int n) : int
+	int sum;
+	int i;
+	sum = 0;
+	for (i=1;i<=n;i=i+1) do
+		sum = sum + i;
+	end;
+	return sum;
+end
+
+def main
+	int n;
+	int sum;
+	n = 10;
+	sum = sumUpTo(n);
+	print(sum);
+end

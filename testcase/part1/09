@@ -1,0 +1,13 @@
+def main
+	int n;
+	bool m;
+	int r;
+	bool s;
+	m = true;
+	n = (10 * (10+1)) /2;
+	r = 99;
+	s = r > m;
+	print(n);
+	print(m);
+	print(s);
+end

@@ -1,0 +1,45 @@
+def sumUpTo(int n) : int
+	int sum;
+	int i;
+	sum = 0;
+	for (i=1;i<=n;i=i+1) do
+		sum = sum + i;
+	end;
+	return sum;
+end
+
+def A(int n) : int
+	int s;
+	int i;
+	s = n;
+	i = s+1;
+	return s+i;
+end
+
+def C(int n) : int
+	int i;
+	i = B(20);
+	i = i + n;
+	return i;
+end
+
+def B(int n) : int
+	int m;
+	int i;
+	m = sumUpTo(n);
+	for (i=0;i<=2;i=i+1) do
+		m = m+i;
+	end;
+end
+
+def main
+	int n;
+	int sum;
+	int m;
+	n = 100;
+	m = 3;
+	sum = C(n);
+	m = A(m);
+	print(m);
+	print(sum);
+end

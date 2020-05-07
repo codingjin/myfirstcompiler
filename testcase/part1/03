@@ -1,0 +1,6 @@
+def main
+	int n;
+	x = true;
+	n = (10 * (10+1)) /2;
+	print(n);
+end
